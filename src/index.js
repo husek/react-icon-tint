@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 export default class IconTint extends Component {
   componentDidMount() {
     const { src, color, customRef, width, height } = this.props;
-    const canvas = customRef || '_IconTint';
+    const canvas = this.refs[customRef || '_IconTint'];
     const pic = new Image();
     pic.src = src;
     const tintCanvas = document.createElement('canvas');

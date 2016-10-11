@@ -1,5 +1,5 @@
 # react-icon-tint
-**react-icon-tint* is a React component that replicates the iOS behavior, where you can easily tint an icon according to your UI.
+**react-icon-tint** is a React component that replicates the iOS behavior, where you can easily tint an icon according to your UI.
 
 ## Usage
 ```

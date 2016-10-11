@@ -86,7 +86,7 @@ var ReactIconTint =
 	      var width = _props.width;
 	      var height = _props.height;
 
-	      var canvas = customRef || '_IconTint';
+	      var canvas = this.refs[customRef || '_IconTint'];
 	      var pic = new Image();
 	      pic.src = src;
 	      var tintCanvas = document.createElement('canvas');
