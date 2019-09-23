@@ -1,16 +1,43 @@
-import React, { Component, PropTypes } from 'react';
+import React, {
+  memo,
+  useEffect,
+  useRef,
+  useState
+} from 'react';
+import PropTypes from 'prop-types';
 
-export default class IconTint extends Component {
-  componentDidMount() {
-    const { src, color, customRef, width, height } = this.props;
-    const canvas = this.refs[customRef || '_IconTint'];
+const IconTint = memo(({
+   fallback = <span />,
+   src,
+   color,
+   maxWidth,
+   maxHeight
+ }) => {
+  const canvasRef = useRef(null);
+  const [size, setSize] = useState({});
+
+  const _scaleImage = (srcWidth, srcHeight, maxWidth, maxHeight) => {
+    if (maxWidth && maxHeight) {
+      const ratio = Math.min(maxWidth / srcWidth, maxHeight / srcHeight);
+      return { width: srcWidth * ratio, height: srcHeight * ratio };
+    }
+    if ((maxWidth && !maxHeight) || (!maxWidth && maxHeight)) {
+      throw new Error('If you are going to provide width, make sure to provide height as well');
+    }
+    return { width: srcWidth, height: srcHeight };
+  };
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    // eslint-disable-next-line no-undef
     const pic = new Image();
     pic.src = src;
     const tintCanvas = document.createElement('canvas');
     const tintCtx = tintCanvas.getContext('2d');
     const ctx = canvas.getContext('2d');
     pic.onload = () => {
-      const result = this._scaleImage(pic.width, pic.height, width, height);
+      const result = _scaleImage(pic.width, pic.height, maxWidth, maxHeight);
+      setSize(result);
       tintCanvas.width = result.width;
       tintCanvas.height = result.height;
       tintCtx.fillStyle = color;
@@ -20,25 +47,20 @@ export default class IconTint extends Component {
       ctx.globalAlpha = 1;
       ctx.drawImage(tintCanvas, 0, 0, result.width, result.height);
     };
-  };
+  }, []);
 
-  _scaleImage(srcWidth, srcHeight, maxWidth, maxHeight) {
-    const ratio = Math.min(maxWidth / srcWidth, maxHeight / srcHeight);
-    return { width: srcWidth * ratio, height: srcHeight * ratio };
-  };
-
-  render() {
-    const { src, color, customRef, width, height } = this.props;
-    return (
-      <canvas width={width} height={height} ref={customRef || '_IconTint'} />
-    );
+  if (typeof window !== 'undefined' && window.document && window.document.createElement) {
+    return (<canvas width={size.width} height={size.height} ref={canvasRef} />);
   }
-}
+  return fallback;
+});
 
 IconTint.propTypes = {
   src: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
-  customRef: PropTypes.string,
-  width: PropTypes.string,
-  height: PropTypes.string,
+  fallback: PropTypes.node,
+  maxWidth: PropTypes.string,
+  maxHeight: PropTypes.string
 };
+
+export default IconTint;

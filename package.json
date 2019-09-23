@@ -1,7 +1,7 @@
 {
   "name": "react-icon-tint",
-  "version": "1.0.1",
-  "description": "Color your PNG Icons.",
+  "version": "2.0.0",
+  "description": "Put some colour on your PNG Icons.",
   "main": "./lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -32,20 +32,24 @@
     "canvas"
   ],
   "devDependencies": {
-    "babel-cli": "^6.14.0",
-    "babel-core": "^6.14.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.4.1",
     "babel-loader": "^6.2.5",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.14.0",
-    "babel-preset-react": "^6.11.1",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "serve-static": "^1.11.1",
-    "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.16.1"
+    "babel-preset-react": "^6.24.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "webpack": "^3.10.0"
   },
   "peerDependencies": {
-    "react": "^15.0.0",
-    "react-dom": "^15.0.0"
+    "react": "^16.2.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2"
   }
 }

@@ -2,6 +2,7 @@
 **react-icon-tint** is a React component that replicates the iOS behavior, where you can easily tint an icon according to your UI.
 
 ## Usage
+Requires React >= 16
 ```
 npm install --save react-icon-tint
 ```
@@ -15,7 +16,7 @@ class MyComponent extends React.Component {
   render() {
     return (
       <div>
-         <IconTint width="20" height="20" src="/bellIcon.png" color="#cecece" customRef="Bell" />
+         <IconTint src="/bellIcon.png" color="#cecece" />
       </div>
     );
   }
@@ -23,12 +24,11 @@ class MyComponent extends React.Component {
 ```
 
 ## Props
-  - `src` – **required** – Image source.
-  - `color` – **required** – Color you want to tint your icon.
-  - `width` – Target width, this lib will keep the aspect automatically.
-  - `height` – Target height, as mentioned earlier, don't worry about aspect ratio.
-  - `customRef` – Custom Ref( Not obligatory, but sounds a good idea to use it if you are going to use multiple tinted icons in the same route);
-
+  - `src - {String}` – **required** – Image source.
+  - `color - {String}` – **required** – Color you want to tint your icon.
+  - `maxWidth - {String} && maxHeight - {String}` – maxWidth + maxHeight for the icon
+  - `fallback - {ReactComponent}` – Fallback component used during the load period and on SSR;
+  
 ## Contributing
 Your contributions are welcome!
 
