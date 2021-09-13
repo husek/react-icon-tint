@@ -59,8 +59,8 @@ IconTint.propTypes = {
   src: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
   fallback: PropTypes.node,
-  maxWidth: PropTypes.string,
-  maxHeight: PropTypes.string
+  maxWidth: PropTypes.number,
+  maxHeight: PropTypes.number
 };
 
 export default IconTint;
