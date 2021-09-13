@@ -26,7 +26,7 @@ class MyComponent extends React.Component {
 ## Props
   - `src - {String}` – **required** – Image source.
   - `color - {String}` – **required** – Color you want to tint your icon.
-  - `maxWidth - {String} && maxHeight - {String}` – maxWidth + maxHeight for the icon
+  - `maxWidth - {Number} && maxHeight - {Number}` – maxWidth + maxHeight for the icon
   - `fallback - {ReactComponent}` – Fallback component used during the load period and on SSR;
   
 ## Contributing
