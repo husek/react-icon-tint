@@ -32,7 +32,7 @@ const MyComponent = () => {
 Your contributions are welcome!
 
 ## Author
-####[husek](https://husek.me)
+[husek](https://husek.me)
 
 ## License
 MIT
