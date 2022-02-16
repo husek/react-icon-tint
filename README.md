@@ -27,6 +27,7 @@ const MyComponent = () => {
 - `color - {String}` – **required** – Color you want to tint your icon.
 - `maxWidth - {Number} && maxHeight - {Number}` – maxWidth + maxHeight for the icon, should be provided in pairs.
 - `fallback - {ReactComponent}` – Fallback component used during the load period and on SSR;
+- Any additional props you pass to this component will be forwarded to the Canvas element that renders your icon. 
 
 ## Contributing
 Your contributions are welcome!
