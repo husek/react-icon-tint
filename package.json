@@ -1,0 +1,102 @@
+{
+  "name": "react-icon-tint",
+  "version": "2.2.0",
+  "description": "Put some colour on your PNG Icons.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p ./tsconfig.json --sourcemap",
+    "commit": "git-cz",
+    "format": "prettier --write \"**/*.+(ts|tsx|md|yml|json)\"",
+    "lint": "eslint ./src --ext .jsx,.ts --ignore-pattern *.test.ts",
+    "semantic-release": "semantic-release",
+    "test:update": "npm test -- --updateSnapshot --coverage",
+    "test": "NODE_ENV=test jest --config=jest.config.js  --coverage --forceExit --detectOpenHandles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/husek/react-icon-tint.git"
+  },
+  "author": "husek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/husek/react-icon-tint/issues"
+  },
+  "homepage": "https://github.com/husek/react-icon-tint/",
+  "keywords": [
+    "react",
+    "react-component",
+    "png",
+    "icon",
+    "color",
+    "react.js",
+    "tint",
+    "colorify",
+    "canvas"
+  ],
+  "peerDependencies": {
+    "react": "^16.8.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{tsx,ts}": [
+      "eslint --fix",
+      "prettier --config ./.prettierrc --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^3.0.4",
+    "@semantic-release/commit-analyzer": "^6.2.0",
+    "@semantic-release/git": "^7.0.16",
+    "@semantic-release/npm": "^5.1.13",
+    "@semantic-release/release-notes-generator": "^7.2.1",
+    "@testing-library/react": "^12.1.3",
+    "@types/jest": "^24.0.16",
+    "@types/react": "^16.8.23",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "all-contributors-cli": "^6.8.1",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
+    "eslint": "^6.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.6.1",
+    "husky": "^3.0.2",
+    "jest": "^24.8.0",
+    "jest-canvas-mock": "^2.3.1",
+    "lint-staged": "^9.2.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.18.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "semantic-release": "^15.13.18",
+    "stylelint": "^10.1.0",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-order": "^3.0.1",
+    "stylelint-scss": "^3.9.2",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.3"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md"
+        }
+      ],
+      "@semantic-release/git",
+      "@semantic-release/npm"
+    ]
+  },
+  "czConfig": {
+    "path": "node_modules/cz-conventional-changelog"
+  }
+}
