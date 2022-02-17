@@ -1,9 +1,9 @@
 {
   "name": "react-icon-tint",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Put some colour on your PNG Icons.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.jsx",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc -p ./tsconfig.json --sourcemap",
     "commit": "git-cz",
