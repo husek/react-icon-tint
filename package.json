@@ -37,11 +37,6 @@
   "peerDependencies": {
     "react": "^16.8.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.{tsx,ts}": [
       "eslint --fix",
@@ -60,13 +55,9 @@
     "@types/react": "^16.8.23",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
-    "all-contributors-cli": "^6.8.1",
-    "commitizen": "^4.0.3",
-    "cz-conventional-changelog": "^3.0.2",
     "eslint": "^6.1.0",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.6.1",
-    "husky": "^3.0.2",
     "jest": "^24.8.0",
     "jest-canvas-mock": "^2.3.1",
     "lint-staged": "^9.2.1",
@@ -74,29 +65,11 @@
     "prettier": "^1.18.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "semantic-release": "^19.0.3",
     "stylelint": "^10.1.0",
     "stylelint-config-standard": "^18.3.0",
     "stylelint-order": "^3.0.1",
     "stylelint-scss": "^3.9.2",
     "ts-jest": "^24.0.2",
     "typescript": "^3.5.3"
-  },
-  "release": {
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      [
-        "@semantic-release/changelog",
-        {
-          "changelogFile": "CHANGELOG.md"
-        }
-      ],
-      "@semantic-release/git",
-      "@semantic-release/npm"
-    ]
-  },
-  "czConfig": {
-    "path": "node_modules/cz-conventional-changelog"
   }
 }
