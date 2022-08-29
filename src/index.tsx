@@ -1,10 +1,11 @@
-import React, {
+import * as React from 'react';
+import { ReactElement } from 'react';
+const {
   memo,
-  ReactElement,
   useEffect,
   useRef,
   useState
-} from 'react';
+} = React;
 
 interface IconTintProps {
   fallback?: ReactElement;

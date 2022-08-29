@@ -10,7 +10,6 @@
     "removeComments": false,
     "declaration": true,
     "preserveConstEnums": true,
-    "sourceMap": true,
     "skipLibCheck": true,
     "baseUrl": ".",
     "experimentalDecorators": true,
