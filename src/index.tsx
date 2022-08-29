@@ -65,7 +65,7 @@ const IconTint: React.FunctionComponent<IconTintProps> = ({
       ctx.globalAlpha = 1;
       ctx.drawImage(tintCanvas, 0, 0, width, height);
     };
-  }, [src, color, maxWidth, maxHeight]);
+  }, [src, color, maxWidth, maxHeight, canvasRef?.current]);
 
   if (typeof window !== 'undefined' && window.document && window.document.createElement) {
     return <canvas width={size.width} height={size.height} ref={canvasRef} {...props} />;
